@@ -383,6 +383,96 @@
       font-size: 0.9rem;
     }
 
+
+    /* =========================
+       Assignment Detail Page
+    ========================= */
+
+    .project-card-link {
+      display: block;
+      height: 100%;
+      color: inherit;
+    }
+
+    .project-card-link:focus-visible {
+      outline: 3px solid #df82aa;
+      outline-offset: 5px;
+      border-radius: 22px;
+    }
+
+    .detail-page {
+      display: none;
+      min-height: 100vh;
+      padding: 130px 0 100px;
+    }
+
+    .detail-page.active {
+      display: block;
+    }
+
+    .detail-content {
+      max-width: 850px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid #f1d4df;
+      border-radius: 28px;
+      padding: 40px;
+      box-shadow: 0 15px 40px rgba(170, 110, 135, 0.08);
+    }
+
+    .detail-label {
+      color: #df82aa;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .detail-content h2 {
+      color: #57434b;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+    }
+
+    .detail-content h3 {
+      color: #c86f99;
+      margin: 28px 0 10px;
+    }
+
+    .detail-content p,
+    .detail-content li {
+      color: #806b73;
+    }
+
+    .detail-content ul {
+      padding-left: 22px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin-bottom: 25px;
+      padding: 10px 18px;
+      border-radius: 100px;
+      background: #fff0f6;
+      color: #c86f99;
+      border: 1px solid #efbfd2;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background: #fce1ed;
+    }
+
+    @media (max-width: 800px) {
+      .detail-content {
+        padding: 25px;
+      }
+
+      .detail-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+
     /* =========================
        Mobile
     ========================= */
@@ -560,19 +650,19 @@
 
 
           <article class="card">
+            <a class="project-card-link" href="#digital-tech" onclick="showDetailPage(event)">
+              <div class="project-number">
+                03 / ASSIGNMENT
+              </div>
 
-            <div class="project-number">
-              03 / COMING SOON
-            </div>
+              <h3>
+                數位科技概論作業
+              </h3>
 
-            <h3>
-              Future Experiment
-            </h3>
-
-            <p>
-              記錄我的實驗、研究、競賽或其他有趣作品。
-            </p>
-
+              <p>
+                點選查看數位科技概論的作業內容、學習重點與完成紀錄。
+              </p>
+            </a>
           </article>
 
         </div>
@@ -670,6 +760,48 @@
     </section>
 
 
+
+    <!-- Digital Technology Assignment Detail -->
+    <section id="digital-tech" class="detail-page">
+      <div class="container">
+        <div class="detail-content">
+          <a class="back-button" href="#projects" onclick="backToProjects(event)">
+            ← 返回作品集
+          </a>
+
+          <div class="detail-label">ASSIGNMENT · DIGITAL TECHNOLOGY</div>
+
+          <h2>數位科技概論作業</h2>
+
+          <p>
+            這裡是我整理數位科技概論課程作業的專區，
+            未來可以放入每週作業、課堂筆記、學習心得與作品成果。
+          </p>
+
+          <h3>作業內容</h3>
+          <ul>
+            <li>課程名稱：數位科技概論</li>
+            <li>作業主題：數位科技與生活</li>
+            <li>學習方向：認識數位科技、網頁製作與數位工具的應用</li>
+            <li>完成狀態：持續更新中</li>
+          </ul>
+
+          <h3>學習心得</h3>
+          <p>
+            透過這門課，我開始了解數位科技如何融入日常生活，
+            也練習使用 HTML、CSS 與其他數位工具，
+            將課堂學到的內容整理成自己的作品。
+          </p>
+
+          <h3>作業成果</h3>
+          <p>
+            之後可以在這裡加入作業截圖、作品連結、
+            GitHub 網址，或直接放入作業檔案。
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact">
       <div class="container">
@@ -717,6 +849,42 @@
   <footer>
     © 2026 游子誼 · Built with curiosity.
   </footer>
+
+
+  <script>
+    function showDetailPage(event) {
+      event.preventDefault();
+
+      document.querySelector("main").style.display = "none";
+      document.querySelector("#digital-tech").classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      history.pushState(null, "", "#digital-tech");
+    }
+
+    function backToProjects(event) {
+      event.preventDefault();
+
+      document.querySelector("#digital-tech").classList.remove("active");
+      document.querySelector("main").style.display = "block";
+      document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
+      history.pushState(null, "", "#projects");
+    }
+
+    window.addEventListener("popstate", function () {
+      if (window.location.hash === "#digital-tech") {
+        document.querySelector("main").style.display = "none";
+        document.querySelector("#digital-tech").classList.add("active");
+      } else {
+        document.querySelector("#digital-tech").classList.remove("active");
+        document.querySelector("main").style.display = "block";
+      }
+    });
+
+    if (window.location.hash === "#digital-tech") {
+      document.querySelector("main").style.display = "none";
+      document.querySelector("#digital-tech").classList.add("active");
+    }
+  </script>
 
 </body>
 </html>
