@@ -881,8 +881,14 @@
     function showDetailPage(event) {
       event.preventDefault();
 
-      document.querySelector("main").style.display = "none";
+      // digital-tech 本身就在 main 裡，所以不能把整個 main 隱藏
+      document.querySelectorAll("main > section").forEach(section => {
+        section.style.display = "none";
+      });
+
       document.querySelector("#digital-tech").classList.add("active");
+      document.querySelector("#digital-tech").style.display = "block";
+
       window.scrollTo({ top: 0, behavior: "smooth" });
       history.pushState(null, "", "#digital-tech");
     }
@@ -891,24 +897,39 @@
       event.preventDefault();
 
       document.querySelector("#digital-tech").classList.remove("active");
-      document.querySelector("main").style.display = "block";
+      document.querySelector("#digital-tech").style.display = "none";
+
+      document.querySelectorAll("main > section").forEach(section => {
+        section.style.display = "";
+      });
+
       document.querySelector("#projects").scrollIntoView({ behavior: "smooth" });
       history.pushState(null, "", "#projects");
     }
 
     window.addEventListener("popstate", function () {
       if (window.location.hash === "#digital-tech") {
-        document.querySelector("main").style.display = "none";
+        document.querySelectorAll("main > section").forEach(section => {
+          section.style.display = "none";
+        });
         document.querySelector("#digital-tech").classList.add("active");
+        document.querySelector("#digital-tech").style.display = "block";
       } else {
         document.querySelector("#digital-tech").classList.remove("active");
-        document.querySelector("main").style.display = "block";
+        document.querySelector("#digital-tech").style.display = "none";
+
+        document.querySelectorAll("main > section").forEach(section => {
+          section.style.display = "";
+        });
       }
     });
 
     if (window.location.hash === "#digital-tech") {
-      document.querySelector("main").style.display = "none";
+      document.querySelectorAll("main > section").forEach(section => {
+        section.style.display = "none";
+      });
       document.querySelector("#digital-tech").classList.add("active");
+      document.querySelector("#digital-tech").style.display = "block";
     }
   </script>
 
