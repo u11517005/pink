@@ -3,40 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>小小自然觀察站</title>
+
+  <title>校園自然觀察任務卡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: #fdf6f8;
+      color: #4f3d43;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(900px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f7dce5, #fceef2);
+      text-align: center;
+      padding: 55px 20px;
+      border-bottom: 1px solid #efd2dc;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      color: #a95f78;
+    }
+
+    header p {
+      margin: 0;
+      color: #765b64;
+      font-size: 1.05rem;
+    }
+
+    main {
+      padding: 40px 0 60px;
+    }
+
+    .task {
+      background: #ffffff;
+      border: 1px solid #efdce2;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 22px rgba(150, 100, 120, 0.08);
+    }
+
+    .task h2 {
+      margin-top: 0;
+      color: #a95f78;
+      font-size: 1.45rem;
+    }
+
+    .task p {
+      color: #5f4c52;
+    }
+
+    .media-box {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .media-box img {
+      max-width: 100%;
+      width: 650px;
+      border-radius: 14px;
+      border: 1px solid #ead5dc;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .media-box audio {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .media-box video {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 14px;
+      border: 1px solid #ead5dc;
+      background: #000;
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #fff4f7;
+      border-left: 4px solid #d990a8;
+      border-radius: 8px;
+      color: #735761;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid #e3cbd3;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #4f3d43;
+      background: #fffafb;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #d990a8;
+      box-shadow: 0 0 0 3px rgba(217, 144, 168, 0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #f7e3e9;
+      color: #765b64;
+      font-size: 0.9rem;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #a95f78;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>小小自然觀察站</h1>
-  <p>用圖片、聲音和影片，介紹一次觀察活動。</p>
 
-  <h2>看一張圖片</h2>
-  <img src="media-02/flower-photo.png" alt="一朵粉紅色波斯菊與黃色花心的攝影風格 AI 生成圖片" width="300">
-  <p>這是攝影風格的 AI 生成花朵圖片，你注意到哪些部分？</p>
+  <header>
+    <div class="container">
+      <h1>校園自然觀察任務卡</h1>
+      <p>今天我們用眼睛觀察，也用文字記錄發現。</p>
+    </div>
+  </header>
 
-  <h2>觀察葉片與透明背景圖片</h2>
-  <img src="media-02/leaf-photo.png" alt="清晨逆光下的一片綠色葉片" width="300">
-  <p>請觀察葉片的形狀、葉脈和光線變化。</p>
-  <p>下面換成透明背景的 PNG，看看背景是否能透出來。</p>
-  <div style="background-color: #dcebea; padding: 16px;">
-    <img src="media-02/flower-transparent.png" alt="透明背景的粉紅色花朵 PNG 圖片" width="240">
-  </div>
-  <p>這裡的淡色底板是用來觀察透明效果；CSS 下一節再學。</p>
+  <main>
+    <div class="container">
 
-  <h2>船長的一週行事曆</h2>
-  <img src="media-02/captain-calendar.svg" alt="船長的一週行事曆，重點行程見下方文字" width="700">
-  <p>教學用虛構行程：2026 年 9 月 14 日至 20 日。週一 10:00 啟航；週三 14:00 救生演練；週五 09:30 靠港補給；週日 10:00 返航。</p>
-  <p>完整行程：週一 08:30 航前簡報、10:00 離港啟航；週二 09:00 甲板巡檢、15:00 航海日誌；週三 07:30 海象觀測、14:00 救生演練；週四 10:00 燈塔定位、16:00 船員會議；週五 09:30 靠港補給、13:00 設備保養；週六 08:00 海岸探索、17:00 夕照攝影；週日 10:00 返航入港、15:30 下週規劃。</p>
+      <a class="back" href="../index.html">
+        ← 回到作品集
+      </a>
 
-  <h2>聽一段提示音</h2>
-  <audio src="media-02/notice.wav" controls></audio>
-  <p>聲音說明：三個由低到高的短音，提醒我們開始觀察。這是合成提示音，不是自然環境錄音。</p>
+      <!-- 任務一 -->
+      <section class="task">
+        <h2>任務一：看看葉脈</h2>
 
-  <h2>看一段影片</h2>
-  <video src="media-02/flower.mp4" controls width="300"></video>
-  <p>影片內容說明：花朵隨風擺動的短片。請觀察花朵的移動。</p>
+        <p>
+          觀察葉片圖片，找出葉脈延伸的方向。
+        </p>
 
-  <h2>素材來源</h2>
-  <p>花朵、葉片與透明花朵 PNG 由 AI 生成；行事曆 SVG 與提示音為本課製作的練習素材。影片採用 MDN 的 flower.mp4 示範檔。</p>
-  <p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video">查看 MDN 影片範例說明</a></p>
-</body>
-</html>
+        <div class="media-box">
+          <img
+            src="media-02/leaf-photo.png"
+            alt="校園自然觀察中的葉片圖片">
+        </div>
+
+        <div class="hint">
+          🔎 小提示：仔細看看葉片中央與兩側的葉脈，
+          想想它們是往哪個方向延伸的。
+        </div>
+      </section>
