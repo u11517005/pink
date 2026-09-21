@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>校園自然觀察任務卡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: #fdf6f8;
+      color: #4f3d43;
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(900px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f7dce5, #fceef2);
+      text-align: center;
+      padding: 55px 20px;
+      border-bottom: 1px solid #efd2dc;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+      color: #a95f78;
+    }
+
+    header p {
+      margin: 0;
+      color: #765b64;
+      font-size: 1.05rem;
+    }
+
+    main {
+      padding: 40px 0 60px;
+    }
+
+    .task {
+      background: #ffffff;
+      border: 1px solid #efdce2;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 22px rgba(150, 100, 120, 0.08);
+    }
+
+    .task h2 {
+      margin-top: 0;
+      color: #a95f78;
+      font-size: 1.45rem;
+    }
+
+    .task p {
+      color: #5f4c52;
+    }
+
+    .media-box {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .media-box img {
+      max-width: 100%;
+      width: 650px;
+      border-radius: 14px;
+      border: 1px solid #ead5dc;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .media-box audio {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .media-box video {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 14px;
+      border: 1px solid #ead5dc;
+      background: #000;
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: #fff4f7;
+      border-left: 4px solid #d990a8;
+      border-radius: 8px;
+      color: #735761;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      margin-top: 18px;
+      padding: 14px;
+      border: 1px solid #e3cbd3;
+      border-radius: 10px;
+      resize: vertical;
+      font-size: 1rem;
+      font-family: inherit;
+      color: #4f3d43;
+      background: #fffafb;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #d990a8;
+      box-shadow: 0 0 0 3px rgba(217, 144, 168, 0.15);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #f7e3e9;
+      color: #765b64;
+      font-size: 0.9rem;
+    }
+
+    .back {
+      display: inline-block;
+      margin-bottom: 25px;
+      color: #a95f78;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <h1>校園自然觀察任務卡</h1>
+      <p>今天我們用眼睛觀察，也用文字記錄發現。</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a class="back" href="../index.html">
+        ← 回到作品集
+      </a>
+
+      <!-- 任務一 -->
+      <section class="task">
+        <h2>任務一：看看葉脈</h2>
+
+        <p>
+          觀察葉片圖片，找出葉脈延伸的方向。
+        </p>
+
+        <div class="media-box">
+          <img
+            src="media-02/leaf-photo.png"
+            alt="校園自然觀察中的葉片圖片">
+        </div>
+
+        <div class="hint">
+          🔎 小提示：仔細看看葉片中央與兩側的葉脈，
+          想想它們是往哪個方向延伸的。
+        </div>
+      </section>
+
+
+      <!-- 任務二 -->
+      <section class="task">
+        <h2>任務二：準備開始</h2>
+
+        <p>
+          按下播放，聽到三個由低到高的短音後，
+          開始你的觀察。
+        </p>
+
+        <div class="media-box">
+          <audio controls>
+            <source src="media-02/notice.wav" type="audio/wav">
+            您的瀏覽器不支援音訊播放。
+          </audio>
+        </div>
+
+        <div class="hint">
+          🎧 請先按下播放，聽完三個由低到高的短音，
+          再開始你的自然觀察任務。
+        </div>
+      </section>
+
+
+      <!-- 任務三 -->
+      <section class="task">
+        <h2>任務三：觀察花朵</h2>
+
+        <p>
+          播放短片，看看花朵怎麼移動，再用一句話描述。
+        </p>
+
+        <div class="media-box">
+          <video controls>
+            <source src="media-02/flower.mp4" type="video/mp4">
+            您的瀏覽器不支援影片播放。
+          </video>
+        </div>
+
+        <label for="observation">
+          ✏️ 我的觀察：
+        </label>
+
+        <textarea
+          id="observation"
+          name="observation"
+          placeholder="請用一句話描述你在影片中觀察到的現象……"></textarea>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    數位科技概論｜活動 02｜校園自然觀察任務卡
+  </footer>
+
+</body>
+</html>
